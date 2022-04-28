@@ -1,0 +1,27 @@
+ini_open("settings.ini");
+ini_write_real("graphics", "fullscreen", window_get_fullscreen());
+ini_write_real("graphics", "android screen adapting", global.screen_adapting);
+ini_write_real("graphics", "vsync", global.vsync)
+ini_write_real("graphics", "fps", global.show_fps);
+ini_write_real("visual", "hud", global.hud_new);
+ini_write_real("visual", "camera", global.camera_old);
+ini_write_real("visual", "motorola", global.motorola_shader);
+ini_write_real("controls", "left", global.key_l);
+ini_write_real("controls", "right", global.key_r);
+ini_write_real("controls", "up", global.key_u);
+ini_write_real("controls", "down", global.key_d);
+ini_write_real("controls", "jump", global.key_a);
+ini_write_real("controls", "back", global.key_b);
+ini_write_real("controls", "delete", global.key_del);
+ini_write_real("controls", "start", global.key_s);
+ini_write_real("controls", "joystick x", global.joy_x);
+ini_write_real("controls", "joystick y", global.joy_y);
+ini_write_real("controls", "button x", global.a_x);
+ini_write_real("controls", "button y", global.a_y);
+ini_write_real("controls", "button alpha", global.buttons_alpha);
+ini_write_string("controls", "NOTE", 'Alternatively, you can delete this whole "controls" section to reset the keybindings.');
+ini_write_string("controls", "IMPORTANT", "The saved keybinds are KEYCODE values and NOT Unicode values. If you wish to edit, do so at your own risk!");
+ini_write_real("drop", "dash", global.drop_dash);
+ini_write_real("audio", "music", global.bgm_gain);
+ini_write_real("audio", "sfx", global.sfx_gain);
+ini_close();

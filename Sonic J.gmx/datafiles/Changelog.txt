@@ -1,0 +1,13 @@
+>>> Final Demo (0.4.0) <<<
+
+ - More bug fixes
+ - Added shields and powerups ()
+ - Revamped character sprites
+ - Added bonus stages (Still figuring things out)
+ - More "quality of life" updates and tweaks
+ - New levels with brand new gimmicks! (will be listed here soon)
+ - Completely revamped UI
+ - Brought back GameJolt achievements, along with a more extended use of the API, which are leaderboards!
+ - Added extras! (Unlockables depending on new collectables earned through bonus stages)
+ - Added Story Mode and Time Attack Mode
+ - Along with story mode, special stages are back too! (Not all seven though)

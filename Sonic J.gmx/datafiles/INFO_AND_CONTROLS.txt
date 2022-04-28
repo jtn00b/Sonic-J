@@ -1,0 +1,38 @@
+https://gamejolt.com/games/sonic_j/261887
+
+Thanks for downloading Sonic J - Final Demo!
+
+NOW READ:
+PLEASE note that this version is referred to as the Final Demo, meaning it's the game's last stage before completion: story mode, proper levels, extra content, new mechanics, and more to come.
+
+Any feedback is appreciated and may potentially help for future releases.
+
+Also, did you know this game is playable on Android? You can check by yourself by clicking the GameJolt link above.
+
+Anyway, thanks for downloading the game, again. U r 2 awsom B)
+
+
+>>> DEFAULT CONTROLS <<<
+
+>> NORMAL CONTROLS
+
+> KEYBOARD
+A - Jump
+S - Back
+D - Delete
+Arrow Keys - Move
+Enter - Start
+
+> CONTROLLER (XBOX)
+A - Jump
+B - Back
+Joystick/D-pad - Move
+Start - Start
+
+>> DEBUG CONTROLS
+F1 - Get hit/die
+F2 - Debug collision/info view toggle
+F3 - Restart the game
+F4 - 1fps mode toggle (use at own risk!)
+F5 - Force bgm set position to 181 seconds
+F6 - Get 50 rings
