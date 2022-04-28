@@ -1,5 +1,5 @@
 # Sonic J
-The official repository of Sonic J and its source code. This is where you can keep track of the game's current development, as well as assist on the process in any way possible through the website. **EVERY POST-RELEASE COMMIT SHOULD BE MADE IN THE POST-RELEASE BRANCH. Should a new release be published, that branch will merge will the main one lest the source messes up.**
+The official repository of Sonic J and its source code. This is where you can keep track of the game's current development, as well as assist on the process in any way possible through the website.
 The repository contains everything from the game, as you would normally expect from a GMS 1.4 project.
 
 ## Things to note
