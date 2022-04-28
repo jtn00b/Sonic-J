@@ -1,2 +1,0 @@
-return (collision_line(center_x-(dcos(angle)*9)+(dsin(angle)*15), ypos+((dsin(angle)*9)+(dcos(angle)*15)), center_x-(dcos(angle)*9)+(dsin(angle)*30), ypos+(dsin(angle)*9)+(dcos(angle)*30), argument0, true, true)
-|| collision_line(center_x+(dcos(angle)*9)+(dsin(angle)*15), ypos-((dsin(angle)*9)-(dcos(angle)*15)), center_x+(dcos(angle)*9)+(dsin(angle)*30), ypos-(dsin(angle)*9)+(dcos(angle)*30), argument0, true, true))
