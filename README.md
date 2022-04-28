@@ -1,5 +1,5 @@
 # Sonic J
-The official repository of Sonic J and its source code. This is where you can keep track of the game's current development, download the latest beta versions, as well as assist on the development process in any way possible through the website.
+The official repository of Sonic J and its source code. This is where you can keep track of the game's current development, download the latest beta versions, and assist on the development process in any way possible through the website.
 
 The repository contains everything from the game, as you would normally expect from a GMS 1.4 project.
 
