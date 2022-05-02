@@ -61,7 +61,7 @@ scr_p_direction_update();
 if (shield != false && shield != "regular") scr_p_shield_action();
 
 //-- Drop Dash--//
-else if (shield == false || shield == "regular") scr_p_drop_dash_charge();
+scr_p_drop_dash_charge();
 
 //-- Jumping --//
 if !tunnel && !(action = 5 && scr_collision_box_main(obj_tunnel_switch)) scr_p_jump();
