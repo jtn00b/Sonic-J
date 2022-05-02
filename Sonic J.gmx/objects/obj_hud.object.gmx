@@ -159,7 +159,7 @@ if global.hud_new{
     draw_sprite(spr_str, 0, view_xview+16, view_yview+9);
     draw_sprite_part_ext(spr_str, 1, 0, 32, sprite_get_width(spr_str), 49-32, view_xview+16, view_yview+41, 1, 1, c_white, rings_red);
     draw_set_alpha(handle.hyper_ring);
-    draw_sprite(spr_hyper_ring_hud, 0, view_xview+94-8*floor(log10(global.player_rings)), view_yview+41);
+    draw_sprite(spr_hyper_ring_hud, 0, view_xview+94-8*max(floor(log10(global.player_rings)), 0), view_yview+41);
     draw_set_alpha(1);
     
 // Draw Number (test)
