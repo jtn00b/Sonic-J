@@ -110,11 +110,11 @@ if !global.Demo{
     if keyboard_check_pressed(vk_f4){
         if room_speed == 60 room_speed = 1; else room_speed = 60;
     }
-    if keyboard_check_pressed(vk_f5){
+    if keyboard_check_pressed(vk_f6){
         global.player_rings += 50;
         audio_play_sound(snd_ring_collect, 0, false);
     }
-    if keyboard_check_pressed(vk_f6){
+    if keyboard_check_pressed(vk_f7){
         global.hud_new = !global.hud_new;
     }
 }
