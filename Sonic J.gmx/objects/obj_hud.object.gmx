@@ -142,7 +142,8 @@ if global.hud_new{
     draw_set_valign(fa_top);
     
     //Draw Score
-    draw_text(view_xview[0]+28, view_yview[0]+10, string(global.Score));
+    if !global.Demo draw_text(view_xview[0]+28, view_yview[0]+10, string(global.Score));
+    else draw_text(view_xview[0]+28, view_yview[0]+10, string(handle.demo_score));
     
     //Draw Time
     scr_drawnumberzero(view_xview+74,view_yview+28,global.gametimems,2);
@@ -168,7 +169,8 @@ if global.hud_new{
     draw_set_halign(fa_right);
     
     //Draw Score
-    draw_text(view_xview+117,view_yview+9,global.Score)
+    if !global.Demo draw_text(view_xview+117,view_yview+9,global.Score);
+    else draw_text(view_xview+117,view_yview+9,handle.demo_score);
     
     //Draw Time
     scr_drawnumberzero(view_xview+117,view_yview+25,global.gametimems,2);

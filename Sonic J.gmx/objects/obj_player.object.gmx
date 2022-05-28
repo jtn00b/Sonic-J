@@ -37,6 +37,7 @@ for (var i = array_length_1d(global.checkpoint_activated) - 1; i &gt; -1; i--;){
         break;
     }
 }
+demo_score = 0;
 drop = false;
 drpcharge = 0;
 drpspd = 8; //the base speed for a drop dash
@@ -634,7 +635,8 @@ if spike &amp;&amp; hurttimer == 0
 if scr_collision_box_main(obj_badnik){
     if !spin &amp;&amp; ani_index != spindash_sprite &amp;&amp; invincible_timer == 0 scr_p_get_hurt();
     else if spin || ani_index == spindash_sprite || invincible_timer &gt; 0{
-        global.Score += 100;
+        if !global.Demo global.Score += 100;
+        else demo_score += 100;
         if sign(ysp) = 1 &amp;&amp; !ground{
             if ysp &gt; 4 &amp;&amp; ((key_ah) || (invincible_timer &gt; 0 &amp;&amp; !(spin || ani_index == spindash_sprite))) {ysp = ysp*-1;}
             else {ysp = -4;}
