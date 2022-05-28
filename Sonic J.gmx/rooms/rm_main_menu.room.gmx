@@ -64,7 +64,7 @@ global.previous_room = rm_title_screen;</code>
     <instance objName="obj_main_menu_controller" x="0" y="0" name="inst_1C5CD5AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_main_menu_option" x="97" y="121" name="inst_0BA2E46D" locked="0" code="desc = &quot;Start playing the game.&quot;&#xA;text = &quot;START&quot;;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_main_menu_option" x="177" y="121" name="inst_EA812629" locked="0" code="index = 1;&#xA;desc = &quot;Coming in Final Demo (?)&quot;;&#xA;text = &quot;TIME A.&quot;;&#xA;locked = true;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_main_menu_option" x="257" y="121" name="inst_5DE134CC" locked="0" code="index = 2;&#xA;desc = &quot;Coming in Final Demo(?)&quot;;&#xA;text = &quot;PROFILE&quot;;&#xA;locked = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_main_menu_option" x="257" y="121" name="inst_5DE134CC" locked="0" code="index = 2;&#xA;desc = &quot;Coming in Final Demo (?)&quot;;&#xA;text = &quot;PROFILE&quot;;&#xA;locked = true;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_main_menu_option" x="337" y="121" name="inst_4200FF16" locked="0" code="index = 3;&#xA;desc = &quot;Manage settings of the game.&quot;;&#xA;text = &quot;SETTING&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
