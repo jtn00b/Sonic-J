@@ -289,7 +289,6 @@ scr_systemcreate();
     <instance objName="obj_ring_icon" x="5376" y="608" name="inst_E529D3BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ring_icon" x="4544" y="256" name="inst_5D62A7F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ring_icon" x="4512" y="256" name="inst_B6E7432A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ring_icon" x="4352" y="400" name="inst_E64E3CF2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_yellow_spring_v" x="5168" y="512" name="inst_69F43316" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_yellow_spring_v" x="5424" y="672" name="inst_DB47CB56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tunnel_switch_right" x="6640" y="352" name="inst_97722C62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -950,8 +949,7 @@ scr_systemcreate();
     <instance objName="obj_sh_fire_icon" x="2752" y="112" name="inst_84468772" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_speed_shoe_icon" x="8960" y="240" name="inst_D3874AAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_inv_icon" x="8832" y="304" name="inst_D3D254E9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monitor" x="32" y="208" name="inst_9DC4F2A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blue_ring_icon" x="32" y="208" name="inst_530C544D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blue_ring_icon" x="4352" y="400" name="inst_841C501E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bck_motorola_tileset" x="0" y="224" w="320" h="16" xo="0" yo="0" id="10000001" name="inst_804C30FE" depth="0" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
