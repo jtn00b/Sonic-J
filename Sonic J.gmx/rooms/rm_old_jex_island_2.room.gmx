@@ -1009,7 +1009,6 @@ scr_systemcreate();
     <instance objName="obj_monitor" x="12592" y="2480" name="inst_B05D62A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_monitor" x="14880" y="624" name="inst_DDA5EAA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ring_icon" x="14880" y="624" name="inst_63D0C76A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ring_icon" x="4304" y="944" name="inst_74D4288F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_monitor" x="4304" y="944" name="inst_A638B63B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_monitor" x="4752" y="368" name="inst_4B8C476E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_monitor" x="4720" y="368" name="inst_B1335184" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1380,8 +1379,7 @@ scr_systemcreate();
     <instance objName="obj_sh_electric_icon" x="6032" y="528" name="inst_5B0BF5EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_inv_icon" x="6736" y="2192" name="inst_996DC249" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sh_fire_icon" x="12592" y="2480" name="inst_EB1BC255" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monitor" x="96" y="2704" name="inst_36742147" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blue_ring_icon" x="96" y="2704" name="inst_142760AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blue_ring_icon" x="4304" y="944" name="inst_87B54CE7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bckJITileSet" x="1856" y="2080" w="32" h="128" xo="640" yo="256" id="10001167" name="inst_E8883483" depth="900" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

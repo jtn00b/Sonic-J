@@ -961,8 +961,8 @@ scr_systemcreate();
     <instance objName="obj_sh_regular_icon" x="5168" y="656" name="inst_42B03885" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sh_bubble_icon" x="12736" y="144" name="inst_24199940" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_sh_electric_icon" x="9808" y="624" name="inst_507746DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_monitor" x="32" y="304" name="inst_9040BF40" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blue_ring_icon" x="32" y="304" name="inst_F1912A48" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_monitor" x="4304" y="528" name="inst_1DDD58BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blue_ring_icon" x="4304" y="528" name="inst_58B9059E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
