@@ -167,9 +167,9 @@ if ((os_type == os_android &amp;&amp; (mouse_check_button_pressed(mb_left) || ga
             <string>draw_set_font(global.text_font);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
-draw_text(8, 5, "Version 0.4.0");
+draw_text(8, 5, "Version 0.3.2.2");
 draw_set_halign(fa_right);
-draw_text(global.Window_X-8, 5, "Final Demo");
+draw_text(global.Window_X-8, 5, "New Physics Demo");
 draw_set_font(font);
 draw_set_alpha(image_alpha);
 draw_set_halign(fa_center);

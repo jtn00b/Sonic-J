@@ -766,7 +766,6 @@
     <rooms name="After Gameplay Rooms">
       <room>rooms\rm_tfp</room>
       <room>rooms\rm_boom</room>
-      <room>rooms\rm_bonus_stage_1</room>
     </rooms>
   </rooms>
   <help>
