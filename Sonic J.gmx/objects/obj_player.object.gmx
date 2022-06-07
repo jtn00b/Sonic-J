@@ -673,7 +673,7 @@ if position_meeting(xpos, ypos, obj_star_post) &amp;&amp; !global.checkpoint_act
     scr_p_starpost_save();
     global.checkpoint_activated[starpost.index] = true;
     audio_play_sound(snd_star_post, 0, false);
-    starpost.dir = sign(xsp);
+    starpost.dir = sign(xsp)+(xsp==0);
     starpost.twirl = true;    
 }
 }
