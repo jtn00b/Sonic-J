@@ -5,8 +5,7 @@ if !goalpost.goal{
     goalpost.goal = true;
     goalpost.spin = true;
     goalpost.index = id;
-    goalpost.sprite_index = spr_goal_post_eggman;
-    if sign_dir >= 0 goalpost.img_ind = 8; else goalpost.img_ind = 6;
+    if sign_dir == -1 goalpost.spin_angle = 360;
     audio_play_sound(snd_goalpost_spin, 0, false);
     if instance_exists(obj_camera){
         obj_camera.target = goalpost;
@@ -16,25 +15,15 @@ if !goalpost.goal{
         obj_camera.mode = -1;
     }
     if abs(gsp) <= 4{
-        goalpost.img_spd = 0.6*sign_dir;
-        goalpost.slowdown = 0.002*sign_dir;
+        goalpost.spin_spd = 10*sign_dir;
+        goalpost.slowdown = 0.025*sign_dir;
     }
     else if abs(gsp) > 4 && abs(gsp) < 12{
-        if sign_dir == 1{
-            goalpost.img_spd = 2*sign_dir;
-            goalpost.slowdown = 0.014*sign_dir;
-        }else{
-            goalpost.img_spd = 2*sign_dir;
-            goalpost.slowdown = 0.0142*sign_dir;
-        }
+        goalpost.spin_spd = 20*sign_dir;
+        goalpost.slowdown = 0.07*sign_dir;
     }
     else{
-        if sign_dir == 1{
-            goalpost.img_spd = 3*sign_dir;
-            goalpost.slowdown = 0.016*sign_dir;
-        }else{
-            goalpost.img_spd = 3*sign_dir;
-            goalpost.slowdown = 0.0166*sign_dir;
-        }
+        goalpost.spin_spd = 30*sign_dir;
+        goalpost.slowdown = 0.14*sign_dir;
     }
 }
