@@ -181,7 +181,7 @@ switch index{
                 obj_op_slider.value_scale = 1;
             }else{
                 global.screen_adapting = true;
-                global.vsync = (os_type == os_android);
+                global.vsync = (os_type != os_android);
                 global.show_fps = (os_type == os_android);
                 global.hud_new = true;
                 global.camera_old = false;
