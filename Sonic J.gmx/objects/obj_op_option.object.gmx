@@ -85,10 +85,12 @@ switch index{
         window_set_fullscreen(false);
         break;
     case 2:
-        obj_op_options._vsync = true;
+        global.vsync = true;
+        display_reset(0, global.vsync);
         break;
     case 3:
-        obj_op_options._vsync = false;
+        global.vsync = false;
+        display_reset(0, global.vsync);
         break;
     case 4:
         global.show_fps = true;
@@ -123,7 +125,7 @@ switch index{
     case 999:
         obj_main_menu_controller.allow_input = false;
         if text == "BACK"{
-            if obj_op_options._screen_adapting != global.screen_adapting || obj_op_options._vsync != global.vsync{
+            if obj_op_options._screen_adapting != global.screen_adapting{
                 scr_message_show("RESTART", "The game must be restarted", "to save settings", 0, string(id)+"restart");
             }else{
                 global.key_u = obj_op_options._up;
@@ -179,11 +181,12 @@ switch index{
                 obj_op_slider.value_scale = 1;
             }else{
                 global.screen_adapting = true;
-                obj_op_options._vsync = false;
-                global.show_fps = (os_type = os_android);
+                global.vsync = (os_type == os_android);
+                global.show_fps = (os_type == os_android);
                 global.hud_new = true;
                 global.camera_old = false;
                 global.motorola_shader = false;
+                display_reset(0, global.vsync);
             }
         }
         break;
@@ -228,7 +231,8 @@ switch index{
 
 if (obj_main_menu_controller.select_x == _x &amp;&amp; obj_main_menu_controller.select_y == _y &amp;&amp; os_type == os_windows) || (mouse_check_button(mb_left) &amp;&amp; position_meeting(mouse_x, mouse_y, self) &amp;&amp; os_type == os_android)
     selected = true;
-else if (((obj_main_menu_controller.select_x != _x || obj_main_menu_controller.select_y != _y) &amp;&amp; os_type == os_windows) || ((!mouse_check_button(mb_left) || !position_meeting(mouse_x, mouse_y, self)) &amp;&amp; os_type == os_android)) &amp;&amp; !pressed selected = false;
+else if (((obj_main_menu_controller.select_x != _x || obj_main_menu_controller.select_y != _y) &amp;&amp; os_type == os_windows) || ((!mouse_check_button(mb_left) || !position_meeting(mouse_x, mouse_y, self)) &amp;&amp; os_type == os_android)) &amp;&amp; !pressed
+    selected = false;
 
 if ((selected &amp;&amp; (obj_main_menu_controller.key_a || obj_main_menu_controller.key_s)) || (mouse_check_button_released(mb_left) &amp;&amp; position_meeting(mouse_x, mouse_y, self))) &amp;&amp; obj_main_menu_controller.allow_input &amp;&amp; !pressed{
     if os_type == os_windows{
@@ -310,10 +314,10 @@ switch index{
         on = !window_get_fullscreen();
         break;
     case 2:
-        on = obj_op_options._vsync;
+        on = global.vsync;
         break;
     case 3:
-        on = !obj_op_options._vsync;
+        on = !global.vsync;
         break;
     case 6:
         on = global.screen_adapting;
@@ -380,17 +384,14 @@ if global.accepted == "true"+string(id)+"restart"{
     global.key_b = obj_op_options._back;
     global.key_del = obj_op_options.__delete;
     global.key_s = obj_op_options.__start;
-    global.vsync = obj_op_options._vsync;
     scr_options_save();
     if obj_op_options._screen_adapting != global.screen_adapting{
-        if global.joy_x != 64 || global.joy_y != 178 || global.a_x != global.Window_X-64 || global.a_y != 178{
-            ini_open('settings.ini');
-            ini_key_delete("controls", "joystick x");
-            ini_key_delete("controls", "joystick y");
-            ini_key_delete("controls", "button x");
-            ini_key_delete("controls", "button y");
-            ini_close();
-        }
+        ini_open('settings.ini');
+        ini_key_delete("controls", "joystick x");
+        ini_key_delete("controls", "joystick y");
+        ini_key_delete("controls", "button x");
+        ini_key_delete("controls", "button y");
+        ini_close();
     }
     game_restart();
 }

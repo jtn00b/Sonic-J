@@ -103,8 +103,7 @@ alarm[0] = 60;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>window_center();
-room_goto_next();
+            <string>room_goto_next();
 </string>
           </argument>
         </arguments>
@@ -151,7 +150,6 @@ room_goto_next();
           <argument>
             <kind>1</kind>
             <string>if init &amp;&amp; audio_group_is_loaded(ad_bgm){
-    window_center();
     room_goto_next();
 }
 if init &amp;&amp; !file_exists("audiogroup1.dat"){
