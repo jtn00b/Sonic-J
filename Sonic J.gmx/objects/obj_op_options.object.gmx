@@ -49,7 +49,6 @@ _back = global.key_b;
 __delete = global.key_del;
 __start = global.key_s;
 _screen_adapting = global.screen_adapting;
-_vsync = global.vsync;
 </string>
           </argument>
         </arguments>
