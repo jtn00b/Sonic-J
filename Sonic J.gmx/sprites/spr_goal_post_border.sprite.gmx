@@ -2,15 +2,15 @@
 <sprite>
   <type>0</type>
   <xorig>25</xorig>
-  <yorigin>32</yorigin>
+  <yorigin>30</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>5</bbox_left>
-  <bbox_right>44</bbox_right>
-  <bbox_top>7</bbox_top>
-  <bbox_bottom>29</bbox_bottom>
+  <bbox_left>0</bbox_left>
+  <bbox_right>49</bbox_right>
+  <bbox_top>0</bbox_top>
+  <bbox_bottom>30</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,8 +18,8 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>50</width>
-  <height>33</height>
+  <height>31</height>
   <frames>
-    <frame index="0">images\spr_goal_post_eggman_0.png</frame>
+    <frame index="0">images\spr_goal_post_border_0.png</frame>
   </frames>
 </sprite>

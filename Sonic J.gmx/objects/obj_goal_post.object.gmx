@@ -26,16 +26,19 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-img_spd = 0;
-img_ind = 0;
 index = noone;
 character = 0;
 goal = 0;
 spin = 0;
+spin_angle = 0;
 slowdown = 0;
 sparkle_timer = 8;
 anim = false;
 clear = false;
+spin_spd = 0;
+face_ind = 0;
+bg_ind = 0;
+img_ind = 0;
 </string>
           </argument>
         </arguments>
@@ -95,7 +98,6 @@ anim = true;
 switch(character){
     default:
     case "sonic":
-        sprite_index = spr_goal_post_sonic_anim;
         img_spd = 0.5;
         break;
 }
@@ -121,7 +123,9 @@ switch(character){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>img_ind += img_spd;
+            <string>spin_angle += spin_spd;
+if sign(spin_spd) == 1 spin_angle = spin_angle%360;
+else if sign(spin_spd) == -1 &amp;&amp; spin_angle &lt; 0 spin_angle += 360;
 
 if instance_exists(obj_player){
     with obj_player{
@@ -134,28 +138,23 @@ if instance_exists(obj_player){
 
 if index != noone character = index.character;
 if spin{
-    if abs(img_spd) &gt; 0.2{
-        img_spd -= slowdown;
-        if abs(img_spd) &lt; 0.2 img_spd = 0.2*sign(img_spd);
+    if abs(spin_spd) &gt; 5{
+        spin_spd -= slowdown;
+        if abs(spin_spd) &lt; 5 spin_spd = 5*sign(spin_spd);
     }
     audio_sound_gain(global.bgm, 0, 500);
-    if img_ind &gt;= 16 || img_ind &lt; 0{
-        if img_ind &gt;= 16 img_ind = 0; else img_ind = 15
-        if sprite_index == spr_goal_post_eggman{
-            switch character{
-                default:
-                case "sonic":
-                    sprite_index = spr_goal_post_sonic;
-                    break;
-            }
-        } else {
-            sprite_index = spr_goal_post_eggman;
-        }
+    switch character{
+        default:
+        case "sonic":
+            face_ind = spr_goal_post_sonic;
+            bg_ind = 1;
+            break;
     }
-    if floor(img_ind) == 7 &amp;&amp; round(abs(img_spd*10))/10 == 0.2 &amp;&amp; sprite_index != spr_goal_post_eggman{
+    if abs(floor(spin_angle/10))*10 == 180 &amp;&amp; abs(spin_spd) == 5{
         spin = false;
         clear = true;
-        img_spd = 0;
+        spin_spd = 0;
+        spin_angle = 180;
         audio_sound_gain(global.bgm, 1, 0);
         audio_stop_sound(global.bgm);
         if !global.Demo{
@@ -171,6 +170,7 @@ if spin{
     }
 }
 if anim{
+    img_ind += img_spd
     if img_ind &gt;= 9{
         img_ind = 0;
         img_spd = 0;
@@ -199,7 +199,19 @@ if anim{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_index, img_ind, x, y);
+            <string>draw_sprite(spr_goal_post_handle, 0, x, y);
+
+draw_sprite_ext(spr_goal_post_border, 0, x+(4*dsin(spin_angle)), y, dcos(spin_angle), 1, 0, c_white, (spin_angle%360 &lt;= 90 || spin_angle%360 &gt; 270));
+draw_sprite_ext(spr_goal_post_border, 0, x+(4*-dsin(spin_angle)), y, -dcos(spin_angle), 1, 0, c_white, !(spin_angle%360 &lt;= 90 || spin_angle%360 &gt; 270));
+
+draw_sprite_ext(spr_goal_post_face, 0, x+(4*dsin(spin_angle)), y, dcos(spin_angle), 1, 0, c_white, (spin_angle%360 &lt;= 90 || spin_angle%360 &gt; 270));
+draw_sprite_ext(spr_goal_post_face, bg_ind, x+(4*-dsin(spin_angle)), y, -dcos(spin_angle), 1, 0, c_white, !(spin_angle%360 &lt;= 90 || spin_angle%360 &gt; 270));
+
+draw_sprite_ext(spr_goal_post_eggman, 1, x+(4*dsin(spin_angle)), y, dcos(spin_angle), 1, 0, c_white, (spin_angle%360 &lt;= 90 || spin_angle%360 &gt; 270));
+draw_sprite_ext(face_ind, img_ind, x+(4*-dsin(spin_angle)), y, -dcos(spin_angle), 1, 0, c_white, !(spin_angle%360 &lt;= 90 || spin_angle%360 &gt; 270));
+
+draw_sprite_ext(spr_goal_post_edge, 0, x+(25*dcos(spin_angle)), y, dsin(spin_angle), 1, 0, c_white, (spin_angle%360 &gt;= 180));
+draw_sprite_ext(spr_goal_post_edge, 0, x-(25*dcos(spin_angle)), y, dsin(spin_angle), 1, 0, c_white, (spin_angle%360 &lt; 180));
 </string>
           </argument>
         </arguments>
