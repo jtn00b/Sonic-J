@@ -309,12 +309,16 @@
         <sprite>sprites\spr_ring_collected</sprite>
       </sprites>
       <sprites name="Goal Post">
+        <sprites name="Pieces">
+          <sprite>sprites\spr_goal_post_handle</sprite>
+          <sprite>sprites\spr_goal_post_border</sprite>
+          <sprite>sprites\spr_goal_post_edge</sprite>
+          <sprite>sprites\spr_goal_post_face</sprite>
+          <sprite>sprites\spr_goal_post_eggman</sprite>
+          <sprite>sprites\spr_goal_post_sonic</sprite>
+          <sprite>sprites\spr_goal_post_miles</sprite>
+        </sprites>
         <sprite>sprites\spr_goal_post</sprite>
-        <sprite>sprites\spr_goal_post_eggman</sprite>
-        <sprite>sprites\spr_goal_post_sonic</sprite>
-        <sprite>sprites\spr_goal_post_sonic_anim</sprite>
-        <sprite>sprites\spr_goal_post_miles</sprite>
-        <sprite>sprites\spr_goal_post_miles_anim</sprite>
         <sprite>sprites\spr_goal_post_mask_right</sprite>
         <sprite>sprites\spr_goal_post_mask_left</sprite>
       </sprites>

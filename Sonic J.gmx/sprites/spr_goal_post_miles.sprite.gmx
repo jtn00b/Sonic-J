@@ -7,10 +7,10 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>0</bbox_left>
-  <bbox_right>49</bbox_right>
+  <bbox_left>1</bbox_left>
+  <bbox_right>45</bbox_right>
   <bbox_top>0</bbox_top>
-  <bbox_bottom>47</bbox_bottom>
+  <bbox_bottom>31</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>50</width>
-  <height>48</height>
+  <height>33</height>
   <frames>
     <frame index="0">images\spr_goal_post_miles_0.png</frame>
     <frame index="1">images\spr_goal_post_miles_1.png</frame>
@@ -30,11 +30,5 @@
     <frame index="7">images\spr_goal_post_miles_7.png</frame>
     <frame index="8">images\spr_goal_post_miles_8.png</frame>
     <frame index="9">images\spr_goal_post_miles_9.png</frame>
-    <frame index="10">images\spr_goal_post_miles_10.png</frame>
-    <frame index="11">images\spr_goal_post_miles_11.png</frame>
-    <frame index="12">images\spr_goal_post_miles_12.png</frame>
-    <frame index="13">images\spr_goal_post_miles_13.png</frame>
-    <frame index="14">images\spr_goal_post_miles_14.png</frame>
-    <frame index="15">images\spr_goal_post_miles_15.png</frame>
   </frames>
 </sprite>
