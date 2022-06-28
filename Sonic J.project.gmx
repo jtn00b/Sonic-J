@@ -276,7 +276,6 @@
         <sprite>sprites\spr_dpad</sprite>
       </sprites>
       <sprite>sprites\spr_player_arrow</sprite>
-      <sprite>sprites\font_text_small</sprite>
       <sprite>sprites\spr_sega</sprite>
       <sprite>sprites\spr_jtn00b</sprite>
     </sprites>
