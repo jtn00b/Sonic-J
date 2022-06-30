@@ -749,7 +749,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <rooms name="Post Gameplay Rooms">
+    <rooms name="Pre Gameplay Rooms">
       <room>rooms\rm_init</room>
       <room>rooms\rm_disclaimer</room>
       <room>rooms\rm_sega</room>
@@ -766,7 +766,7 @@
       <room>rooms\rm_old_jex_island_2</room>
       <room>rooms\rm_motorola</room>
     </rooms>
-    <rooms name="After Gameplay Rooms">
+    <rooms name="Post Gameplay Rooms">
       <room>rooms\rm_tfp</room>
       <room>rooms\rm_boom</room>
       <room>rooms\rm_bonus_stage_1</room>
