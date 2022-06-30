@@ -34,6 +34,34 @@ gj_token = "";
 
 login = false;
 auth = false;
+session_open = false;
+logging_in = false;
+login_button = noone;
+logged_in = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>ping = scr_gj_session_ping(gj_username, gj_token);
+alarm[0] = 1800;
 </string>
           </argument>
         </arguments>
@@ -56,7 +84,8 @@ auth = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if auth == true{
+            <string>//Ask for username
+if auth == true{
     gj_username = get_string_async("GameJolt username:", "");
     auth = false;
 }
@@ -86,19 +115,100 @@ auth = false;
     case gj_username:
         if ds_map_find_value(async_load, "status"){
             gj_username = ds_map_find_value(async_load, "result");
+            //Ask for game token
             gj_token = get_string_async("GameJolt game token:","");
         }else{
             if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
         }
         break;
+    
     case gj_token:
         if ds_map_find_value(async_load, "status"){
             gj_token = ds_map_find_value(async_load, "result");
+            //Authenticate the user
+            login = scr_gj_user_auth(gj_username, gj_token);
+            logging_in = true;
         }else{
             if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
         }
         break;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="62">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>result = 0;
+response = 0;
+success = 0;
+
+switch ds_map_find_value(async_load, "id"){
+    case login:
+        if ds_map_find_value(async_load, "status") == 0{
+            scr_gj_result_get();
+            if success == "true"{
+                //Authentication successful. You can now open the session.
+                open_session = scr_gj_session_open(gj_username, gj_token);
+            }
+        }
+        break;
+    
+    case open_session:
+        if ds_map_find_value(async_load, "status") == 0{
+            scr_gj_result_get();
+            if success == "true"{
+                //Login success! The online session is opened.
+                logging_in = false;
+                logged_in = true;
+                audio_play_sound(snd_ring_collect, 0, false);
+                alarm[0] = 1800;
+                if instance_exists(login_button) &amp;&amp; login_button.object_index == obj_main_menu_option &amp;&amp; login_button.index == 2 &amp;&amp; room == rm_main_menu{
+                    obj_main_menu_controller.allow_input = true;
+                }
+            }
+        }
+        break;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>session_close = scr_gj_session_close(gj_username, gj_token);
 </string>
           </argument>
         </arguments>

@@ -526,6 +526,17 @@
       <script>scripts\scr_hud_icons_sort.gml</script>
       <script>scripts\scrGamepadCheckReleasedAnyButton.gml</script>
     </scripts>
+    <scripts name="GameJolt">
+      <script>scripts\scr_gj_result_get.gml</script>
+      <scripts name="User">
+        <script>scripts\scr_gj_user_auth.gml</script>
+      </scripts>
+      <scripts name="Session">
+        <script>scripts\scr_gj_session_open.gml</script>
+        <script>scripts\scr_gj_session_close.gml</script>
+        <script>scripts\scr_gj_session_ping.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdr_motorola.shader</shader>
