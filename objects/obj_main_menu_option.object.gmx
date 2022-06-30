@@ -81,6 +81,10 @@ if locked{
                 fade.trans_timer = 60;
             }
             break;
+        case 2:
+            obj_gj_controller.auth = true;
+            pressed = false;
+            break;
         case 3:
             fade = instance_create(0,0,obj_fade);
             fade.trans_type = 2;

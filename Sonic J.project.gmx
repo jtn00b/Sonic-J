@@ -728,6 +728,7 @@
         <object>objects\obj_bonus_text</object>
       </objects>
       <object>objects\obj_init</object>
+      <object>objects\obj_gj_controller</object>
       <object>objects\obj_camera</object>
       <object>objects\obj_fade</object>
       <object>objects\obj_hud</object>
