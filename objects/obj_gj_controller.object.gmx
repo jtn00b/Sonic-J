@@ -208,7 +208,7 @@ switch ds_map_find_value(async_load, "id"){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>session_close = scr_gj_session_close(gj_username, gj_token);
+            <string>if logged_in {session_close = scr_gj_session_close(gj_username, gj_token);}
 </string>
           </argument>
         </arguments>
