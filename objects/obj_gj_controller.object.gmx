@@ -162,7 +162,7 @@ success = 0;
 switch ds_map_find_value(async_load, "id"){
     case login:
         if ds_map_find_value(async_load, "status") == 0{
-            scr_gj_result_get();
+            scr_gj_result_parse();
             if success == "true"{
                 //Authentication successful. You can now open the session.
                 open_session = scr_gj_session_open(gj_username, gj_token);
@@ -172,7 +172,7 @@ switch ds_map_find_value(async_load, "id"){
     
     case open_session:
         if ds_map_find_value(async_load, "status") == 0{
-            scr_gj_result_get();
+            scr_gj_result_parse();
             if success == "true"{
                 //Login success! The online session is opened.
                 logging_in = false;
