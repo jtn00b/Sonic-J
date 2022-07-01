@@ -113,27 +113,25 @@ if auth == true{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>switch ds_map_find_value(async_load, "id"){
-    case gj_username:
-        if ds_map_find_value(async_load, "status"){
-            gj_username = ds_map_find_value(async_load, "result");
-            //Ask for game token
-            gj_token = get_string_async("GameJolt game token:","");
-        }else{
-            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
-        }
-        break;
-    
-    case gj_token:
-        if ds_map_find_value(async_load, "status"){
-            gj_token = ds_map_find_value(async_load, "result");
-            //Authenticate the user
-            login = scr_gj_user_auth(gj_username, gj_token);
-            logging_in = true;
-        }else{
-            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
-        }
-        break;
+            <string>if ds_map_find_value(async_load, "id") == gj_username{
+    if ds_map_find_value(async_load, "status"){
+        gj_username = ds_map_find_value(async_load, "result");
+        //Ask for game token
+        gj_token = get_string_async("GameJolt game token:","");
+    }else{
+        if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+    }
+}
+
+else if ds_map_find_value(async_load, "id") == gj_token{
+    if ds_map_find_value(async_load, "status"){
+        gj_token = ds_map_find_value(async_load, "result");
+        //Authenticate the user
+        login = scr_gj_user_auth(gj_username, gj_token);
+        logging_in = true;
+    }else{
+        if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+    }
 }
 </string>
           </argument>
@@ -161,49 +159,47 @@ if auth == true{
 response = 0;
 success = 0;
 
-switch ds_map_find_value(async_load, "id"){
-    case login:
-        if ds_map_find_value(async_load, "status") == 0{
-            scr_gj_result_parse();
-            if success == "true"{
-                //Authentication successful. You can now open the session.
-                open_session = scr_gj_session_open(gj_username, gj_token);
-            }
-        }else{
+if ds_map_find_value(async_load, "id") == login{
+    if ds_map_find_value(async_load, "status") == 0{
+        scr_gj_result_parse();
+        if success == "true"{
+            //Authentication successful. You can now open the session.
+            open_session = scr_gj_session_open(gj_username, gj_token);
+        }
+    }else{
+        logging_in = false;
+        if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+    }
+}
+
+else if ds_map_find_value(async_load, "id") == open_session{
+    if ds_map_find_value(async_load, "status") == 0{
+        scr_gj_result_parse();
+        if success == "true"{
+            //Login success! The online session is opened.
             logging_in = false;
-            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
-        }
-        break;
-    
-    case open_session:
-        if ds_map_find_value(async_load, "status") == 0{
-            scr_gj_result_parse();
-            if success == "true"{
-                //Login success! The online session is opened.
-                logging_in = false;
-                logged_in = true;
-                audio_play_sound(snd_ring_collect, 0, false);
-                alarm[0] = 1800;
-                
-                //Grant the user the classic login trophy.
-                trophy_unlock = scr_gj_trophy_add(gj_username, gj_token, "120905");
-                
-                //Just to check if we logged on in main menu
-                if room == rm_main_menu{
-                    obj_main_menu_controller.allow_input = true;
-                }
+            logged_in = true;
+            audio_play_sound(snd_ring_collect, 0, false);
+            alarm[0] = 1800;
+            
+            //Grant the user the classic login trophy.
+            trophy_unlock = scr_gj_trophy_add(gj_username, gj_token, "120905");
+            
+            //Just to check if we logged on in main menu
+            if room == rm_main_menu{
+                obj_main_menu_controller.allow_input = true;
             }
-        }else{
-            logging_in = false;
-            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
         }
-        break;
-    
-    case trophy_unlock:
-        if ds_map_find_value(async_load, "status") == 0{
-            scr_gj_result_parse();
-        }
-        break;
+    }else{
+        logging_in = false;
+        if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+    }
+}
+
+else if ds_map_find_value(async_load, "id") == trophy_unlock{
+    if ds_map_find_value(async_load, "status") == 0{
+        scr_gj_result_parse();
+    }
 }
 </string>
           </argument>
