@@ -37,6 +37,8 @@ auth = false;
 session_open = false;
 logging_in = false;
 logged_in = false;
+
+trophy_unlock = 0;
 </string>
           </argument>
         </arguments>
@@ -180,11 +182,20 @@ switch ds_map_find_value(async_load, "id"){
                 audio_play_sound(snd_ring_collect, 0, false);
                 alarm[0] = 1800;
                 
+                //Grant the user the classic login trophy.
+                trophy_unlock = scr_gj_trophy_add(gj_username, gj_token, "120905");
+                
                 //Just to check if we logged on in main menu
                 if room == rm_main_menu{
                     obj_main_menu_controller.allow_input = true;
                 }
             }
+        }
+        break;
+    
+    case trophy_unlock:
+        if ds_map_find_value(async_load, "status") == 0{
+            scr_gj_result_parse();
         }
         break;
 }
