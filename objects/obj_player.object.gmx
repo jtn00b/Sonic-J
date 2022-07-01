@@ -263,7 +263,7 @@ if global.Demo
     }else{
         demo_error = true;
         instance_deactivate_all(true);
-        instance_activate_object(obj_window_control);
+        instance_activate_object(obj_persistent_controller);
         background_color[0] = c_black;
         scr_message_show("DEMO ERROR!","Demo file missing!","Returning to title screen.",0,id);
         audio_play_sound(snd_menu_whoosh, 10, false);
@@ -696,6 +696,7 @@ else{
     instance_activate_object(obj_mp_title);
     instance_activate_object(obj_mp_text);
     instance_activate_object(obj_mp_ribbon);
+    instance_activate_object(obj_persistent_controller);
 }
 </string>
           </argument>
