@@ -112,6 +112,7 @@ else if (!shaders_are_supported() || !shader_is_compiled(shdr_motorola)) &amp;&a
     error = true;
     depth = -9990;
     instance_deactivate_all(true);
+    instance_activate_object(obj_persistent_controller);
     scr_message_show("SHADER FAIL!","The stage will be played","with normal colors.",0,id);
     shader = false;
     background_color[0] = make_color_rgb(235,235,235);

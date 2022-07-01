@@ -740,6 +740,7 @@
       <object>objects\obj_motorola_shader</object>
       <object>objects\obj_object_controller</object>
       <object>objects\obj_bonus_stage_controller</object>
+      <object>objects\obj_persistent_controller</object>
     </objects>
     <objects name="Backgrounds">
       <object>objects\obj_ji_background</object>
