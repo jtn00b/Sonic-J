@@ -36,7 +36,6 @@ login = false;
 auth = false;
 session_open = false;
 logging_in = false;
-login_button = noone;
 logged_in = false;
 </string>
           </argument>
@@ -60,7 +59,8 @@ logged_in = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>ping = scr_gj_session_ping(gj_username, gj_token);
+            <string>///Keep pinging every 30 seconds
+ping = scr_gj_session_ping(gj_username, gj_token);
 alarm[0] = 1800;
 </string>
           </argument>
@@ -179,7 +179,9 @@ switch ds_map_find_value(async_load, "id"){
                 logged_in = true;
                 audio_play_sound(snd_ring_collect, 0, false);
                 alarm[0] = 1800;
-                if instance_exists(login_button) &amp;&amp; login_button.object_index == obj_main_menu_option &amp;&amp; login_button.index == 2 &amp;&amp; room == rm_main_menu{
+                
+                //Just to check if we logged on in main menu
+                if room == rm_main_menu{
                     obj_main_menu_controller.allow_input = true;
                 }
             }
@@ -208,7 +210,8 @@ switch ds_map_find_value(async_load, "id"){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if logged_in {session_close = scr_gj_session_close(gj_username, gj_token);}
+            <string>///Close session if game ended
+if logged_in {session_close = scr_gj_session_close(gj_username, gj_token);}
 </string>
           </argument>
         </arguments>

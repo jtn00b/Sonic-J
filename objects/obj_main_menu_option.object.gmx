@@ -66,7 +66,7 @@ if locked{
 }else{
     switch index{
         default:
-        case 0:
+        case 0: //START
             fade = instance_create(0,0,obj_fade);
             fade.trans_type = 2;
             fade.fade_mode = 0;
@@ -81,16 +81,12 @@ if locked{
                 fade.trans_timer = 60;
             }
             break;
-        case 2:
-            if !obj_gj_controller.logged_in{
-                obj_gj_controller.auth = true;
-                obj_gj_controller.login_button = id;
-            }else{
-                obj_main_menu_controller.allow_input = true;
-            }
+        case 2: //PROFILE
+            if !obj_gj_controller.logged_in {obj_gj_controller.auth = true;}
+            else {obj_main_menu_controller.allow_input = true;}
             pressed = false;
             break;
-        case 3:
+        case 3: //SETTING
             fade = instance_create(0,0,obj_fade);
             fade.trans_type = 2;
             fade.fade_mode = 0;
