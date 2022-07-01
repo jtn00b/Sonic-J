@@ -129,7 +129,7 @@ if !global.paused &amp;&amp; key_pr &amp;&amp; allow_input{
     audio_pause_all();
     instance_deactivate_all(true);
     instance_activate_object(obj_pm_pause_icon);
-    instance_activate_object(obj_window_control);
+    instance_activate_object(obj_persistent_controller);
     instance_create(0, 0, obj_pm_ribbon);
     instance_create(0, 0, obj_pm_line);
     instance_create(0, 0, obj_pm_pause_text);
