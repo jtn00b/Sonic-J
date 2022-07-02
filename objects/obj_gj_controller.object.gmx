@@ -165,6 +165,9 @@ if ds_map_find_value(async_load, "id") == login{
         if success == "true"{
             //Authentication successful. You can now open the session.
             open_session = scr_gj_session_open(gj_username, gj_token);
+        }else{
+            logging_in = false;
+            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
         }
     }else{
         logging_in = false;
@@ -189,6 +192,9 @@ else if ds_map_find_value(async_load, "id") == open_session{
             if room == rm_main_menu{
                 obj_main_menu_controller.allow_input = true;
             }
+        }else{
+            logging_in = false;
+            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
         }
     }else{
         logging_in = false;
