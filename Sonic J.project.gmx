@@ -528,6 +528,7 @@
     </scripts>
     <scripts name="GameJolt">
       <script>scripts\scr_gj_result_parse.gml</script>
+      <script>scripts\scr_gj_show_error_message.gml</script>
       <scripts name="User">
         <script>scripts\scr_gj_user_auth.gml</script>
       </scripts>

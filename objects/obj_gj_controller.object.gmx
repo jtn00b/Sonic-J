@@ -44,6 +44,31 @@ trophy_unlock = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if room == rm_main_menu {
+    obj_main_menu_controller.allow_input = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -90,6 +115,12 @@ alarm[0] = 1800;
 if auth == true{
     gj_username = get_string_async("GameJolt username:", "");
     auth = false;
+}
+
+if global.accepted == "true"+"error"{
+    scr_message_exit();
+    alarm[1] = 19;
+    global.accepted = -1;
 }
 </string>
           </argument>
@@ -167,11 +198,11 @@ if ds_map_find_value(async_load, "id") == login{
             open_session = scr_gj_session_open(gj_username, gj_token);
         }else{
             logging_in = false;
-            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+            scr_gj_show_error_message();
         }
     }else{
         logging_in = false;
-        if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+        scr_message_show("ERROR", "Could not connect to GameJolt.", "Check internet and servers.", 0, "error");
     }
 }
 
@@ -194,11 +225,11 @@ else if ds_map_find_value(async_load, "id") == open_session{
             }
         }else{
             logging_in = false;
-            if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+            scr_gj_show_error_message();
         }
     }else{
         logging_in = false;
-        if room == rm_main_menu {obj_main_menu_controller.allow_input = true;}
+        scr_message_show("ERROR", "Could not connect to GameJolt.", "Check internet and servers.", 0, "error");
     }
 }
 
@@ -207,6 +238,8 @@ else if ds_map_find_value(async_load, "id") == trophy_unlock{
         scr_gj_result_parse();
     }
 }
+if ds_exists(result, ds_type_map) {ds_map_destroy(result);}
+if ds_exists(response, ds_type_map) {ds_map_destroy(response);}
 </string>
           </argument>
         </arguments>
