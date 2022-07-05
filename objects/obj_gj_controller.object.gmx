@@ -200,7 +200,7 @@ if ds_map_find_value(async_load, "id") == login{
             logging_in = false;
             scr_gj_show_error_message();
         }
-    }else{
+    }else if ds_map_find_value(async_load, "status") &lt; 0{
         logging_in = false;
         scr_message_show("ERROR", "Could not connect to GameJolt.", "Check internet and servers.", 0, "error");
     }
@@ -227,7 +227,7 @@ else if ds_map_find_value(async_load, "id") == open_session{
             logging_in = false;
             scr_gj_show_error_message();
         }
-    }else{
+    }else if ds_map_find_value(async_load, "status") &lt; 0{
         logging_in = false;
         scr_message_show("ERROR", "Could not connect to GameJolt.", "Check internet and servers.", 0, "error");
     }
