@@ -55,8 +55,12 @@ draw_set_font(global.text_font);
 if text2 != 0{
     draw_text(view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y-12, string(text));
     draw_text(view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y+9, string(text2));
-}else
-    draw_text(view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y, string(text));
+}else{
+    draw_set_valign(fa_middle);
+    draw_text(view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y+5, string(text));
+}
+draw_set_halign(fa_left);
+draw_set_valign(fa_middle);
 </string>
           </argument>
         </arguments>
