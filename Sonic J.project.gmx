@@ -526,6 +526,21 @@
       <script>scripts\scr_hud_icons_sort.gml</script>
       <script>scripts\scrGamepadCheckReleasedAnyButton.gml</script>
     </scripts>
+    <scripts name="GameJolt">
+      <script>scripts\scr_gj_result_parse.gml</script>
+      <script>scripts\scr_gj_show_error_message.gml</script>
+      <scripts name="User">
+        <script>scripts\scr_gj_user_auth.gml</script>
+      </scripts>
+      <scripts name="Session">
+        <script>scripts\scr_gj_session_open.gml</script>
+        <script>scripts\scr_gj_session_close.gml</script>
+        <script>scripts\scr_gj_session_ping.gml</script>
+      </scripts>
+      <scripts name="Trophies">
+        <script>scripts\scr_gj_trophy_add.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shdr_motorola.shader</shader>
@@ -663,6 +678,12 @@
         <object>objects\obj_yellow_projectile</object>
       </objects>
     </objects>
+    <objects name="Backgrounds">
+      <object>objects\obj_ji_background</object>
+      <object>objects\obj_ji_ocean_parallax</object>
+      <object>objects\obj_sega</object>
+      <object>objects\obj_jtn00b</object>
+    </objects>
     <objects name="System">
       <objects name="Title Screen">
         <object>objects\obj_ts_sonic</object>
@@ -728,6 +749,7 @@
         <object>objects\obj_bonus_text</object>
       </objects>
       <object>objects\obj_init</object>
+      <object>objects\obj_gj_controller</object>
       <object>objects\obj_camera</object>
       <object>objects\obj_fade</object>
       <object>objects\obj_hud</object>
@@ -741,12 +763,6 @@
       <object>objects\obj_object_controller</object>
       <object>objects\obj_bonus_stage_controller</object>
       <object>objects\obj_persistent_controller</object>
-    </objects>
-    <objects name="Backgrounds">
-      <object>objects\obj_ji_background</object>
-      <object>objects\obj_ji_ocean_parallax</object>
-      <object>objects\obj_sega</object>
-      <object>objects\obj_jtn00b</object>
     </objects>
   </objects>
   <rooms name="rooms">

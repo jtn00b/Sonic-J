@@ -59,7 +59,7 @@
     <option_android_package_company>jean_tha_n00b</option_android_package_company>
     <option_android_package_domain>com</option_android_package_domain>
     <option_android_package_product>sonicj</option_android_package_product>
-    <option_android_permission_flags>0</option_android_permission_flags>
+    <option_android_permission_flags>8</option_android_permission_flags>
     <option_android_portrait_splash_png>Configs\Default\android\portrait_splash.png</option_android_portrait_splash_png>
     <option_android_push_enable>0</option_android_push_enable>
     <option_android_push_id></option_android_push_id>

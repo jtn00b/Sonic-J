@@ -66,7 +66,7 @@ if locked{
 }else{
     switch index{
         default:
-        case 0:
+        case 0: //START
             fade = instance_create(0,0,obj_fade);
             fade.trans_type = 2;
             fade.fade_mode = 0;
@@ -81,7 +81,12 @@ if locked{
                 fade.trans_timer = 60;
             }
             break;
-        case 3:
+        case 2: //PROFILE
+            if !obj_gj_controller.logged_in {obj_gj_controller.auth = true;}
+            else {obj_main_menu_controller.allow_input = true;}
+            pressed = false;
+            break;
+        case 3: //SETTING
             fade = instance_create(0,0,obj_fade);
             fade.trans_type = 2;
             fade.fade_mode = 0;
@@ -171,8 +176,9 @@ if os_type == os_android &amp;&amp; (selected || pressed) draw_sprite(spr_menu_s
 draw_set_font(global.text_font);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
+if obj_gj_controller.logging_in {draw_text(global.Window_X/2, 222, "Connecting...");}
 if selected{
-    if os_type != os_android draw_text(global.Window_X/2, 222, string(desc));
+    if os_type != os_android &amp;&amp; !obj_gj_controller.logging_in draw_text(global.Window_X/2, 222, string(desc));
     draw_set_font(global.text_font_gold);
 }
 if locked &amp;&amp; pressed draw_set_font(global.text_font_red);

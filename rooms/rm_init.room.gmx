@@ -79,6 +79,7 @@ scr_options_load();</code>
   <instances>
     <instance objName="obj_init" x="0" y="0" name="inst_836978BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_window_control" x="32" y="0" name="inst_0BAD4500" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gj_controller" x="64" y="0" name="inst_B67FF03F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
