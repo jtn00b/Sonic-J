@@ -890,27 +890,44 @@ if ypos &gt; room_height &amp;&amp; action != 9{
           <argument>
             <kind>1</kind>
             <string>if demo_error exit;
-display_set_gui_size(window_get_width(), window_get_height());
-draw_set_font(-1);
 draw_set_halign(fa_left);
-draw_set_color(c_white);
-if instance_exists(obj_motorola_shader) draw_set_color(c_black);
 if debug{
-    draw_text(0, 0, "xpos "+string(xpos));
-    draw_text(0, 16, "ypos "+string(ypos));
-    draw_text(0, 16*2, "xsp "+string(xsp));
-    draw_text(0, 16*3, "ysp "+string(ysp));
-    draw_text(0, 16*4, "gsp "+string(gsp));
-    draw_text(0, 16*5, "ground "+string(ground));
-    draw_text(0, 16*6, "angle "+string(angle));
-    draw_text(0, 16*7, "mode "+string(mode));
-    draw_text(0, 16*8, "tile_x "+string(tile_x));
-    draw_text(0, 16*9, "tile_y "+string(tile_y));
-    draw_text(0, 16*15, "fps "+string(fps));
-    draw_text(0, 16*16, "real fps "+string(fps_real));
-    draw_text(0, 16*10, "visual_angle "+string(draw_angle));
-    draw_text(0, 16*11, "action "+string(action));
-    draw_text(0, 16*12, "flash "+string(flash_timer));
+    draw_set_color(c_black);
+    draw_set_alpha(100/255);
+    draw_rectangle(0, 0, 104, 135, false);
+    draw_set_alpha(1);
+    draw_set_color(c_white);
+    draw_set_font(global.debug_font);
+    draw_text(4, 4, "POS_X");
+    draw_text(4, 4+9, "POS_Y");
+    draw_text(4, 4+(9*2), "X_SP");
+    draw_text(4, 4+(9*3), "Y_SP");
+    draw_text(4, 4+(9*4), "G_SP");
+    draw_text(4, 4+(9*5), "GROUND");
+    draw_text(4, 4+(9*6), "ANGLE");
+    draw_text(4, 4+(9*7), "ANGLE_V");
+    draw_text(4, 4+(9*8), "TILE_X");
+    draw_text(4, 4+(9*9), "TILE_Y");
+    draw_text(4, 4+(9*10), "ACTION");
+    draw_text(4, 4+(9*11), "MODE");
+    draw_text(4, 4+(9*11)+14, "FPS");
+    draw_text(4, 4+(9*11)+14+9, "REAL FPS");
+    draw_set_halign(fa_right);
+    draw_text(101, 4, xpos);
+    draw_text(101, 4+9, ypos);
+    draw_text(101, 4+(9*2), xsp);
+    draw_text(101, 4+(9*3), ysp);
+    draw_text(101, 4+(9*4), gsp);
+    draw_text(101, 4+(9*5), ground);
+    draw_text(101, 4+(9*6), angle);
+    draw_text(101, 4+(9*7), draw_angle);
+    draw_text(101, 4+(9*8), tile_x);
+    draw_text(101, 4+(9*9), tile_y);
+    draw_text(101, 4+(9*10), action);
+    draw_text(101, 4+(9*11), mode);
+    draw_text(101, 4+(9*11)+14, fps);
+    draw_text(101, 4+(9*11)+14+9, fps_real);
+    draw_set_halign(fa_left);
 }
 </string>
           </argument>
