@@ -58,7 +58,7 @@ global.title_font_blue = font_add_sprite_ext(font_text_title_blue, "!ç',-./0123
 global.title_font_red = font_add_sprite_ext(font_text_title_red, "!ç',-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZ\_", true, -1);
 global.title_font_gold = font_add_sprite_ext(font_text_title_gold, "!ç',-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZ\_", true, -1);
 global.system_font = font_add_sprite_ext(font_system, "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890*.:-=!?", true, 0);
-//global.base_font_small = font_add_sprite_ext(font_text_small, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!?.,;:'@()/+-*&lt;&gt;_[]{}|", true, -1);
+global.debug_font = font_add_sprite_ext(font_debug, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,_-", true, 1);
 </string>
           </argument>
         </arguments>
