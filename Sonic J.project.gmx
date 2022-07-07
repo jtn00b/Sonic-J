@@ -177,6 +177,7 @@
           <sprite>sprites\font_system</sprite>
           <sprite>sprites\font_hud_numbers</sprite>
           <sprite>sprites\font_lives</sprite>
+          <sprite>sprites\font_debug</sprite>
         </sprites>
       </sprites>
       <sprites name="Title Screen">
