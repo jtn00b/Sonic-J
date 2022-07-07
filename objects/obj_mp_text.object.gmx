@@ -60,7 +60,7 @@ if text2 != 0{
     draw_text(view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y+5, string(text));
 }
 draw_set_halign(fa_left);
-draw_set_valign(fa_middle);
+draw_set_valign(fa_top);
 </string>
           </argument>
         </arguments>

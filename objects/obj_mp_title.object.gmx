@@ -51,7 +51,7 @@
             <string>draw_sprite(spr_mp_title_background, 0, view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y-31);
 draw_set_font(global.title_font);
 draw_set_halign(fa_center);
-draw_text(view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y-31-14, string(text))
+draw_text(view_xview[0]+obj_mp_ribbon._x, view_yview[0]+obj_mp_ribbon._y-31-13, string(text))
 </string>
           </argument>
         </arguments>
