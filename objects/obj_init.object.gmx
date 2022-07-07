@@ -127,6 +127,7 @@ alarm[0] = 60;
           <argument>
             <kind>1</kind>
             <string>init = true;
+instance_create(0, 0, obj_loading_screen);
 </string>
           </argument>
         </arguments>
@@ -183,7 +184,6 @@ if init &amp;&amp; !file_exists("audiogroup1.dat"){
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
-if init draw_text(global.Window_X/2, global.Window_Y/2, "LOADING...");
 if error {
     draw_set_font(global.title_font_red);
     draw_text(global.Window_X/2, 100, "ERROR!");

@@ -276,6 +276,12 @@
         <sprite>sprites\spr_a_button</sprite>
         <sprite>sprites\spr_dpad</sprite>
       </sprites>
+      <sprites name="Loading screen">
+        <sprite>sprites\spr_loading_text</sprite>
+        <sprite>sprites\spr_loading_period</sprite>
+        <sprite>sprites\spr_sonic_loading_icon</sprite>
+        <sprite>sprites\spr_miles_loading_icon</sprite>
+      </sprites>
       <sprite>sprites\spr_player_arrow</sprite>
       <sprite>sprites\spr_sega</sprite>
       <sprite>sprites\spr_jtn00b</sprite>
@@ -764,6 +770,7 @@
       <object>objects\obj_object_controller</object>
       <object>objects\obj_bonus_stage_controller</object>
       <object>objects\obj_persistent_controller</object>
+      <object>objects\obj_loading_screen</object>
     </objects>
   </objects>
   <rooms name="rooms">
