@@ -2,7 +2,10 @@
 
 with obj_gj_controller{
     show_debug_message(ds_map_find_value(async_load, "result"));
-    result = json_decode(ds_map_find_value(async_load, "result"));
-    response = result[? "response"];
-    success = response[? "success"];
+    result = ds_map_find_value(async_load, "result");
+    if result != "IOException"{
+        result = json_decode(result);
+        response = result[? "response"];
+        success = response[? "success"];
+    }else exit;
 }

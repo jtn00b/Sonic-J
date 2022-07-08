@@ -193,12 +193,17 @@ success = 0;
 if ds_map_find_value(async_load, "id") == login{
     if ds_map_find_value(async_load, "status") == 0{
         scr_gj_result_parse();
-        if success == "true"{
-            //Authentication successful. You can now open the session.
-            open_session = scr_gj_session_open(gj_username, gj_token);
+        if result != "IOException"{
+            if success == "true"{
+                //Authentication successful. You can now open the session.
+                open_session = scr_gj_session_open(gj_username, gj_token);
+            }else{
+                logging_in = false;
+                scr_gj_show_error_message();
+            }
         }else{
             logging_in = false;
-            scr_gj_show_error_message();
+            scr_message_show("ERROR", "Could not connect to GameJolt.", "Check internet and servers.", 0, "error");
         }
     }else if ds_map_find_value(async_load, "status") &lt; 0{
         logging_in = false;
@@ -209,23 +214,28 @@ if ds_map_find_value(async_load, "id") == login{
 else if ds_map_find_value(async_load, "id") == open_session{
     if ds_map_find_value(async_load, "status") == 0{
         scr_gj_result_parse();
-        if success == "true"{
-            //Login success! The online session is opened.
-            logging_in = false;
-            logged_in = true;
-            audio_play_sound(snd_ring_collect, 0, false);
-            alarm[0] = 1800;
-            
-            //Grant the user the classic login trophy.
-            trophy_unlock = scr_gj_trophy_add(gj_username, gj_token, "120905");
-            
-            //Just to check if we logged on in main menu
-            if room == rm_main_menu{
-                obj_main_menu_controller.allow_input = true;
+        if result != "IOException"{
+            if success == "true"{
+                //Login success! The online session is opened.
+                logging_in = false;
+                logged_in = true;
+                audio_play_sound(snd_ring_collect, 0, false);
+                alarm[0] = 1800;
+                
+                //Grant the user the classic login trophy.
+                trophy_unlock = scr_gj_trophy_add(gj_username, gj_token, "120905");
+                
+                //Just to check if we logged on in main menu
+                if room == rm_main_menu{
+                    obj_main_menu_controller.allow_input = true;
+                }
+            }else{
+                logging_in = false;
+                scr_gj_show_error_message();
             }
         }else{
             logging_in = false;
-            scr_gj_show_error_message();
+            scr_message_show("ERROR", "Could not connect to GameJolt.", "Check internet and servers.", 0, "error");
         }
     }else if ds_map_find_value(async_load, "status") &lt; 0{
         logging_in = false;
@@ -238,7 +248,7 @@ else if ds_map_find_value(async_load, "id") == trophy_unlock{
         scr_gj_result_parse();
     }
 }
-if ds_exists(result, ds_type_map) {ds_map_destroy(result);}
+if result != "IOException" &amp;&amp; ds_exists(result, ds_type_map) {ds_map_destroy(result);}
 if ds_exists(response, ds_type_map) {ds_map_destroy(response);}
 </string>
           </argument>
